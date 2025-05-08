@@ -1,0 +1,14 @@
+package com.rak.notification.client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.rak.notification.model.UserDTO;
+
+@FeignClient(name = "user-service", url = "http://localhost:8081")
+public interface UserClient {
+    @GetMapping("/api/users/{id}")
+    UserDTO getUser(@PathVariable Long id);
+}
+
