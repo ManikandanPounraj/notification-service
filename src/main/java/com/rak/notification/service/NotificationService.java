@@ -30,8 +30,8 @@ public class NotificationService {
 			message = String.format("Hello %s, your booking for '%s' on %s is confirmed. Total: ₹%.2f", user.getName(),
 					event.getName(), event.getDate(), req.getPaymentAmount());
 		} else if ("CANCELLATION".equalsIgnoreCase(req.getType())) {
-			message = String.format("Hello %s, your booking for '%s' has been cancelled.", user.getName(),
-					event.getName());
+			message = String.format("Hello %s, your booking for '%s' on %s has been cancelled.", user.getName(),
+					event.getName(),event.getDate());
 		} else {
 			throw new IllegalArgumentException("Unknown notification type");
 		}

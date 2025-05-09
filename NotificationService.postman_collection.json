@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "c8f87df8-6e23-4637-874f-ebe8ed336ab7",
+		"name": "NotificationService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44784589",
+		"_collection_link": "https://manikandan-3492006.postman.co/workspace/Manikandan's-Workspace~db84f807-3804-473e-8e42-f8dd5375c254/collection/44784589-c8f87df8-6e23-4637-874f-ebe8ed336ab7?action=share&source=collection_link&creator=44784589"
+	},
+	"item": [
+		{
+			"name": "Send Booking Notification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 1,\n  \"eventId\": 1,\n  \"numberOfTickets\": 2,\n  \"paymentAmount\": 500.0,\n  \"type\": \"BOOKING\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8085/api/notify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"notify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Cancellation Notification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 1,\n  \"eventId\": 1,\n  \"type\": \"CANCELLATION\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8085/api/notify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"notify"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
